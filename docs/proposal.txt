@@ -1,0 +1,9 @@
+One of our ideas is a web app that allows users to input ingrediants they
+have and find a list of recipes that contain these ingrediants as well as
+their nutrient content. This app will be beneficial for users who want to
+take advantange of the ingrediants in their fidge without having to go 
+grocery shopping and users who want to explore alternative recipe for a 
+particular dish. We will use a non relational database such as mongoDB
+to store the ingrediants and recipes data. So far the two public APIs we've
+chose are Spoonacular and Recipal. Spoonacular allows you to seach recipe 
+by ingrediants and Recipal provides nutrition analysis. 
