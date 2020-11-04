@@ -1,0 +1,11 @@
+extends layout
+
+block content
+    h1= name
+    p updated at: #{updated_at}
+    p Population: #{population}
+    p Total Cases: #{latest_data.confirmed}
+    p Total Recovered: #{latest_data.recovered}
+    p Critical Cases: #{latest_data.critical}
+    p Total Deaths: #{latest_data.deaths}
+
