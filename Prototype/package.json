@@ -1,0 +1,24 @@
+{
+  "name": "prototype",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "bell": "^5.4.0",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "hapi": "^11.0.0",
+    "http-errors": "~1.6.3",
+    "jwt-simple": "^0.3.1",
+    "morgan": "~1.9.1",
+    "nedb": "^1.2.1",
+    "node-fetch": "^2.6.1",
+    "passport": "^0.4.1",
+    "passport-fitbit-oauth2": "^1.0.2",
+    "pug": "2.0.0-beta11",
+    "wreck": "^6.3.0"
+  }
+}
