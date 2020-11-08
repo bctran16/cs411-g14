@@ -1,5 +1,7 @@
+const bodyParser = require("body-parser");
 const createError = require('http-errors');
 const express = require('express');
+const session = require('express-session');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
@@ -21,18 +23,23 @@ const app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
+app.use(bodyParser());
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(session({ secret: 'keyboard cat'}));
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/auth/fitbit/success', fitbitauthsuccRouter)
 app.use('/auth/fitbit/failure', fitbitauthfailRouter)
 
-app.use(passport.initialize());
+
 passport.use(new FitbitStrategy({
       clientID: fitcon.fitbitconfig.FITBIT_CLIENT_ID,
       clientSecret: fitcon.fitbitconfig.FITBIT_CLIENT_SECRET,
@@ -48,13 +55,12 @@ passport.use(new FitbitStrategy({
 ));
 
 passport.serializeUser(function(user, done) {
-  done(null, user.profile);
+    done(null, user);
 });
 
 //need to connect to a database for this to run
-passport.deserializeUser(function(profile, done) {
-    console.log(profile)
-  done(null, {profile: profile});
+passport.deserializeUser(function(user, done) {
+    done(null, user)
 });
 
 app.get('/auth/fitbit',

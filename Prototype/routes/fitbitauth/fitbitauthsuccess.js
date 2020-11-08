@@ -4,7 +4,8 @@ const router = express.Router();
 
 
 router.get('/', function(req, res, next) {
-//need to get data and send to render
+    console.log(req.user)
+    res.render('index', req.body.user);
 });
 
 
