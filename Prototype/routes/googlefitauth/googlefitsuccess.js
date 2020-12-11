@@ -3,7 +3,11 @@ const router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    res.render('index', { title: 'success' });
+    let status = {
+        title: 'success', 
+        authorized: 'Google'
+    }
+    res.render('authorized', status );
 });
 
 module.exports = router;

@@ -12,13 +12,13 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 
 const config = require('./Config/Config')
 
+// Initialize all routes
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const fitbitauthsuccRouter = require('./routes/fitbitauth/fitbitauthsuccess')
 const fitbitauthfailRouter = require('./routes/fitbitauth/fitbitauthfail')
 const googlefitauthsuccRouter = require('./routes/googlefitauth/googlefitsuccess')
 const googlefirauthfailRouter = require('./routes/googlefitauth/googlefitfail')
-
 
 const app = express();
 
@@ -44,7 +44,7 @@ app.use('/auth/fitbit/failure', fitbitauthfailRouter)
 app.use('/auth/google/success', googlefitauthsuccRouter)
 app.use('/auth/google/failure', googlefirauthfailRouter)
 
-
+// Fitbit Oauth Initialization 
 passport.use(new FitbitStrategy({
       clientID: config.fitbitconfig.FITBIT_CLIENT_ID,
       clientSecret: config.fitbitconfig.FITBIT_CLIENT_SECRET,
@@ -59,6 +59,7 @@ passport.use(new FitbitStrategy({
     }
 ));
 
+// Google OAuth Initialization
 passport.use(new GoogleStrategy({
         clientID: config.googlefitconfig.GOOGLEFIT_CLIENT_ID,
         clientSecret: config.googlefitconfig.GOOGLEFIT_CLIENT_SECRET,
@@ -82,19 +83,23 @@ passport.deserializeUser(function(user, done) {
     done(null, user)
 });
 
+//Calling Fitbit Oauth
 app.get('/auth/fitbit',
     passport.authenticate('fitbit', {
       scope: ['activity','heartrate','location','nutrition','profile','settings','sleep','social','weight'] }
     ));
 
+// redirect route
 app.get( '/auth/fitbit/callback', passport.authenticate( 'fitbit', {
   successRedirect: '/auth/fitbit/success',
   failureRedirect: '/auth/fitbit/failure'
 }));
 
+//Caling Google OAuth
 app.get('/auth/google',
     passport.authenticate('google', { scope: ['profile'] }));
 
+// redirect route
 app.get('/auth/google/callback',
     passport.authenticate('google', {
         successRedirect: '/auth/google/success',
