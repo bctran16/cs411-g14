@@ -7,14 +7,17 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const passport = require("passport");
 const FitbitStrategy = require( 'passport-fitbit-oauth2' ).FitbitOAuth2Strategy;
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
 
 
-const fitcon = require('./Config/Config')
+const config = require('./Config/Config')
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const fitbitauthsuccRouter = require('./routes/fitbitauth/fitbitauthsuccess')
 const fitbitauthfailRouter = require('./routes/fitbitauth/fitbitauthfail')
+const googlefitauthsuccRouter = require('./routes/googlefitauth/googlefitsuccess')
+const googlefirauthfailRouter = require('./routes/googlefitauth/googlefitfail')
 
 
 const app = express();
@@ -38,11 +41,13 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/auth/fitbit/success', fitbitauthsuccRouter)
 app.use('/auth/fitbit/failure', fitbitauthfailRouter)
+app.use('/auth/google/success', googlefitauthsuccRouter)
+app.use('/auth/google/failure', googlefirauthfailRouter)
 
 
 passport.use(new FitbitStrategy({
-      clientID: fitcon.fitbitconfig.FITBIT_CLIENT_ID,
-      clientSecret: fitcon.fitbitconfig.FITBIT_CLIENT_SECRET,
+      clientID: config.fitbitconfig.FITBIT_CLIENT_ID,
+      clientSecret: config.fitbitconfig.FITBIT_CLIENT_SECRET,
       callbackURL: "http://localhost:3000/auth/fitbit/callback"
     },
     function(accessToken, refreshToken, profile, done) {
@@ -51,6 +56,20 @@ passport.use(new FitbitStrategy({
         refreshToken: refreshToken,
         profile: profile
       })
+    }
+));
+
+passport.use(new GoogleStrategy({
+        clientID: config.googlefitconfig.GOOGLEFIT_CLIENT_ID,
+        clientSecret: config.googlefitconfig.GOOGLEFIT_CLIENT_SECRET,
+        callbackURL: "http://localhost:3000/auth/google/callback"
+    },
+    function(accessToken, refreshToken, profile, cb) {
+    cb(null, {
+        accessToken: accessToken,
+        refreshToken: refreshToken,
+        profile: profile
+    })
     }
 ));
 
@@ -72,6 +91,15 @@ app.get( '/auth/fitbit/callback', passport.authenticate( 'fitbit', {
   successRedirect: '/auth/fitbit/success',
   failureRedirect: '/auth/fitbit/failure'
 }));
+
+app.get('/auth/google',
+    passport.authenticate('google', { scope: ['profile'] }));
+
+app.get('/auth/google/callback',
+    passport.authenticate('google', {
+        successRedirect: '/auth/google/success',
+        failureRedirect: '/auth/google/failure'
+    }));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
