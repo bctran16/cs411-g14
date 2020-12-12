@@ -1,3 +1,3 @@
 # cs411-g14
 
-This is my project for CS411.
+This is our project for CS411.
