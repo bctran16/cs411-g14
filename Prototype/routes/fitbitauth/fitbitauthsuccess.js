@@ -10,6 +10,7 @@ const getData = async (token) => {
     return cleanData
 }
 
+
 router.get('/', function(req, res, next) {
     let status = {
         title: 'success', 
