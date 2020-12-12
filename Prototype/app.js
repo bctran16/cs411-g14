@@ -8,6 +8,10 @@ const logger = require('morgan');
 const passport = require("passport");
 const FitbitStrategy = require( 'passport-fitbit-oauth2' ).FitbitOAuth2Strategy;
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
+const {google} = require("googleapis");
+const request = require("request");
+const urlParse = require("url-parse");
+const axios = require("axios");
 
 
 const config = require('./Config/Config')
