@@ -10,15 +10,16 @@ const getData = async (token) => {
     return cleanData
 }
 
-router.get('/', function(req, res, next) {
-    let status = {
-        title: 'success', 
-        authorized: 'Fitbit',
-        username: req.user.profile.displayName, 
-        val: "Google", 
-        googlelink: "location.href='http://localhost:3000/auth/google';"
-    }
-    res.render('firstoauth', status)
+router.get('/', (req, res, next) => {
+    res.redirect('/authorized')
+    // let status = {
+    //     title: 'success', 
+    //     authorized: 'Fitbit',
+    //     username: req.user.profile.displayName, 
+    //     val: "Google", 
+    //     googlelink: "location.href='http://localhost:3000/auth/google';"
+    // }
+    // res.render('firstoauth', status)
     //console.log(req.user)
     // getData(req.user.accessToken).then(data => {
     //     let displayData = {
