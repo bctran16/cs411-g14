@@ -69,7 +69,7 @@ passport.deserializeUser((id, done) => {
     done(null,user)
   })
 });
-
+//var save_this_shit = "help me";
 // Fitbit Oauth Initialization 
 passport.use(new FitbitStrategy({
       clientID: config.fitbitconfig.FITBIT_CLIENT_ID,
@@ -77,16 +77,20 @@ passport.use(new FitbitStrategy({
       callbackURL: "http://localhost:3000/auth/fitbit/callback"
     },
     (accessToken, refreshToken, profile, done) => {
+      //save_this_shit = accessToken
       User.findOne({fitbitid: profile.id}).then((currentUser) => {
         if (currentUser) {
           // user exist
+          currentUser.update({token: accessToken})
+          console.log("where the fuck did you go" + currentUser.token)
           done(null,currentUser)
           console.log("User already existed" + currentUser)
         } else {
           // create new user
           new User({
             username: profile.displayName,
-            fitbitid: profile.id
+            fitbitid: profile.id,
+            token: accessToken
           }).save().then((newUser) => {
             console.log("User data stored in db")
             done(null, newUser)
@@ -104,7 +108,7 @@ app.get('/auth/fitbit',
 
 // redirect route
 app.get( '/auth/fitbit/callback', passport.authenticate( 'fitbit', {
-  successRedirect: '/auth/fitbit/success',
+  successRedirect: `/auth/fitbit/success/`,
   failureRedirect: '/auth/fitbit/failure'
 }));
 

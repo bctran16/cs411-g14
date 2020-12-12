@@ -20,16 +20,18 @@ router.get('/', (req, res, next) => {
     //     googlelink: "location.href='http://localhost:3000/auth/google';"
     // }
     // res.render('firstoauth', status)
-    //console.log(req.user)
-    // getData(req.user.accessToken).then(data => {
-    //     let displayData = {
-    //         title:'bit2health',
-    //         username: req.user.profile.displayName, 
-    //         distance: data.lifetime.total.distance, 
-    //         mostperday: data.best.total.distance.value
-    //     }
-    //     res.render('display', displayData);
-    // })
+    /*getData(req.params.save_this_shit).then(data => {
+        let displayData = {
+        title:'bit2health',
+        username:  req.user.username, 
+        distance: data.lifetime.total.distance, 
+        mostperday: data.best.total.distance.value
+        };
+       res.render('display', displayData);
+        })
+        
+    */
 });
+
 
 module.exports = router;
