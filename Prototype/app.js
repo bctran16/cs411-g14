@@ -86,7 +86,7 @@ passport.use(new FitbitStrategy({
           // create new user
           new User({
             username: profile.displayName,
-            googleid: profile.id
+            fitbitid: profile.id
           }).save().then((newUser) => {
             console.log("User data stored in db")
             done(null, newUser)
