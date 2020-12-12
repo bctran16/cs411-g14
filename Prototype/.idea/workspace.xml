@@ -2,12 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1527a73c-c00f-4cdb-88dd-55f3ad86cbbb" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/bin_www.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/bin_www.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/stylesheets/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/authorized.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/authorized.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/display.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/display.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/firstoauth.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/firstoauth.pug" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/index.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Ps4/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Ps4/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/layout.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/layout.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,16 +37,20 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="javascript.nodejs.core.library.configured.version" value="14.13.0" />
-    <property name="javascript.nodejs.core.library.typings.version" value="14.14.6" />
+    <property name="javascript.nodejs.core.library.configured.version" value="12.13.0" />
+    <property name="javascript.nodejs.core.library.typings.version" value="12.19.8" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\sning\Documents\BU\CS411\cs411-g14\Prototype\views" />
+      <recent name="C:\Users\sning\Documents\BU\CS411\cs411-g14\Prototype\Config" />
       <recent name="$PROJECT_DIR$/routes/fitbitauth" />
     </key>
   </component>
@@ -64,96 +73,22 @@
       <updated>1604605834585</updated>
       <workItem from="1604605836067" duration="24609000" />
       <workItem from="1607374298371" duration="1820000" />
+      <workItem from="1607772703914" duration="13408000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="104" y="52" width="1071" height="748" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604787149571">
-      <screen x="0" y="0" width="1280" height="800" />
-    </state>
-    <state x="104" y="52" width="1071" height="748" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.800@0.0.1280.800" timestamp="1604787149571" />
-    <state x="378" y="154" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1604786018940">
-      <screen x="0" y="0" width="1280" height="800" />
-    </state>
-    <state x="378" y="154" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.800@0.0.1280.800" timestamp="1604786018940" />
-    <state width="882" height="466" key="DebuggerActiveHint" timestamp="1604790422129">
-      <screen x="0" y="0" width="1280" height="800" />
-    </state>
-    <state width="882" height="466" key="DebuggerActiveHint/0.0.1280.800@0.0.1280.800" timestamp="1604790422129" />
-    <state width="1259" height="212" key="GridCell.Tab.0.bottom" timestamp="1607376948252">
-      <screen x="0" y="0" width="1280" height="800" />
-    </state>
-    <state width="1259" height="212" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1607376948252" />
-    <state width="1259" height="212" key="GridCell.Tab.0.center" timestamp="1607376948251">
-      <screen x="0" y="0" width="1280" height="800" />
-    </state>
-    <state width="1259" height="212" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1607376948251" />
-    <state width="1259" height="212" key="GridCell.Tab.0.left" timestamp="1607376948250">
-      <screen x="0" y="0" width="1280" height="800" />
-    </state>
-    <state width="1259" height="212" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1607376948250" />
-    <state width="1259" height="212" key="GridCell.Tab.0.right" timestamp="1607376948251">
-      <screen x="0" y="0" width="1280" height="800" />
-    </state>
-    <state width="1259" height="212" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1607376948251" />
-    <state width="1259" height="264" key="GridCell.Tab.1.bottom" timestamp="1605666289123">
-      <screen x="0" y="0" width="1280" height="800" />
-    </state>
-    <state width="1259" height="264" key="GridCell.Tab.1.bottom/0.0.1280.800@0.0.1280.800" timestamp="1605666289123" />
-    <state width="1259" height="264" key="GridCell.Tab.1.bottom/0.23.1280.777@0.23.1280.777" timestamp="1604876699620" />
-    <state width="1259" height="264" key="GridCell.Tab.1.center" timestamp="1605666289122">
-      <screen x="0" y="0" width="1280" height="800" />
-    </state>
-    <state width="1259" height="264" key="GridCell.Tab.1.center/0.0.1280.800@0.0.1280.800" timestamp="1605666289122" />
-    <state width="1259" height="264" key="GridCell.Tab.1.center/0.23.1280.777@0.23.1280.777" timestamp="1604876699617" />
-    <state width="1259" height="264" key="GridCell.Tab.1.left" timestamp="1605666289121">
-      <screen x="0" y="0" width="1280" height="800" />
-    </state>
-    <state width="1259" height="264" key="GridCell.Tab.1.left/0.0.1280.800@0.0.1280.800" timestamp="1605666289121" />
-    <state width="1259" height="264" key="GridCell.Tab.1.left/0.23.1280.777@0.23.1280.777" timestamp="1604876699614" />
-    <state width="1259" height="264" key="GridCell.Tab.1.right" timestamp="1605666289122">
-      <screen x="0" y="0" width="1280" height="800" />
-    </state>
-    <state width="1259" height="264" key="GridCell.Tab.1.right/0.0.1280.800@0.0.1280.800" timestamp="1605666289122" />
-    <state width="1259" height="264" key="GridCell.Tab.1.right/0.23.1280.777@0.23.1280.777" timestamp="1604876699618" />
-    <state width="1259" height="264" key="GridCell.Tab.2.bottom" timestamp="1605666289129">
-      <screen x="0" y="0" width="1280" height="800" />
-    </state>
-    <state width="1259" height="264" key="GridCell.Tab.2.bottom/0.0.1280.800@0.0.1280.800" timestamp="1605666289129" />
-    <state width="1259" height="264" key="GridCell.Tab.2.center" timestamp="1605666289128">
-      <screen x="0" y="0" width="1280" height="800" />
-    </state>
-    <state width="1259" height="264" key="GridCell.Tab.2.center/0.0.1280.800@0.0.1280.800" timestamp="1605666289128" />
-    <state width="1259" height="264" key="GridCell.Tab.2.left" timestamp="1605666289127">
-      <screen x="0" y="0" width="1280" height="800" />
-    </state>
-    <state width="1259" height="264" key="GridCell.Tab.2.left/0.0.1280.800@0.0.1280.800" timestamp="1605666289127" />
-    <state width="1259" height="264" key="GridCell.Tab.2.right" timestamp="1605666289128">
-      <screen x="0" y="0" width="1280" height="800" />
-    </state>
-    <state width="1259" height="264" key="GridCell.Tab.2.right/0.0.1280.800@0.0.1280.800" timestamp="1605666289128" />
-    <state width="1259" height="264" key="GridCell.Tab.3.bottom" timestamp="1605666289134">
-      <screen x="0" y="0" width="1280" height="800" />
-    </state>
-    <state width="1259" height="264" key="GridCell.Tab.3.bottom/0.0.1280.800@0.0.1280.800" timestamp="1605666289134" />
-    <state width="1259" height="264" key="GridCell.Tab.3.center" timestamp="1605666289131">
-      <screen x="0" y="0" width="1280" height="800" />
-    </state>
-    <state width="1259" height="264" key="GridCell.Tab.3.center/0.0.1280.800@0.0.1280.800" timestamp="1605666289131" />
-    <state width="1259" height="264" key="GridCell.Tab.3.left" timestamp="1605666289130">
-      <screen x="0" y="0" width="1280" height="800" />
-    </state>
-    <state width="1259" height="264" key="GridCell.Tab.3.left/0.0.1280.800@0.0.1280.800" timestamp="1605666289130" />
-    <state width="1259" height="264" key="GridCell.Tab.3.right" timestamp="1605666289133">
-      <screen x="0" y="0" width="1280" height="800" />
-    </state>
-    <state width="1259" height="264" key="GridCell.Tab.3.right/0.0.1280.800@0.0.1280.800" timestamp="1605666289133" />
-    <state x="183" y="136" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1604784023709">
-      <screen x="0" y="0" width="1280" height="800" />
-    </state>
-    <state x="183" y="136" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1280.800@0.0.1280.800" timestamp="1604784023709" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

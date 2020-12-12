@@ -1,7 +1,14 @@
 extends layout
 
 block content
-  h1= title
-  p #{username}, you have been authorized! Here are some stats about your data. 
-  p You have walked a total of #{distance} miles.
-  p The furthest you have walked per day is #{mostperday} miles per day. 
+  div(class="bgimage")
+    div(class="card text-center cd")
+      h1(class="card-title") title
+      h4(class="card-text") #{username}, you have been authorized! Here are some stats about your data.
+      h4(class="card-text") You have walked a total of #{distance} miles.
+      h4(class="card-text") The furthest you have walked per day is #{mostperday} miles per day.
+
+  //h1= title
+  //p #{username}, you have been authorized! Here are some stats about your data.
+  //p You have walked a total of #{distance} miles.
+  //p The furthest you have walked per day is #{mostperday} miles per day.

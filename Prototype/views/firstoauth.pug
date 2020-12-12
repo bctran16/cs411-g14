@@ -1,8 +1,11 @@
 extends layout
 
 block content
-  h1= StepSyncer
-  p #{username}, you have been authorized for #{authorized}!  
-  p Please log into your other application. 
-  <input type="button" onclick=#{googlelink} value= "Log into #{val}" />
+  div(class="bgimage")
+    div(class="card text-center cd")
+      h1(class="card-title") StepSyncer
+      h4(class="card-text") #{username}, you have been authorized for #{authorized}!
+      h4(class="card-text") Please log into your other application.
+      button(type="button" onclick=`${googlelink}` class="btn btn-primary") Log into #{val}
+
   
