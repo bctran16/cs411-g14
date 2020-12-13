@@ -23,10 +23,11 @@ router.get('/', (req, res, next) => {
     // res.render('firstoauth', status
     getData(req.user.token).then(data => {
         let displayData = {
-        title:'bit2health',
+        title:'StepsSyncer',
         username:  req.user.username, 
-        distance: data.lifetime.total.distance, 
-        mostperday: data.best.total.distance.value
+        steps: data.lifetime.total.steps, 
+        distance: data.lifetime.total.distance,
+        mostperday: data.best.total.steps.value
         };
        res.render('display', displayData);
         })
