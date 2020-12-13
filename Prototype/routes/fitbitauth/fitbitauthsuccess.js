@@ -1,3 +1,4 @@
+const { query } = require('express');
 const express = require('express');
 const fetch = require('node-fetch')
 const router = express.Router();
@@ -11,7 +12,7 @@ const getData = async (token) => {
 }
 
 router.get('/', (req, res, next) => {
-    res.redirect('/authorized')
+   // res.redirect('/authorized')
     // let status = {
     //     title: 'success', 
     //     authorized: 'Fitbit',
@@ -19,8 +20,8 @@ router.get('/', (req, res, next) => {
     //     val: "Google", 
     //     googlelink: "location.href='http://localhost:3000/auth/google';"
     // }
-    // res.render('firstoauth', status)
-   /* getData().then(data => {
+    // res.render('firstoauth', status
+    getData(req.user.token).then(data => {
         let displayData = {
         title:'bit2health',
         username:  req.user.username, 
@@ -29,7 +30,7 @@ router.get('/', (req, res, next) => {
         };
        res.render('display', displayData);
         })
-        */
+        
     
 });
 
