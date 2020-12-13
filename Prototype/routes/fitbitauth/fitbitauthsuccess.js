@@ -11,6 +11,7 @@ const getData = async (token) => {
     return cleanData
 }
 
+
 router.get('/', (req, res, next) => {
    // res.redirect('/authorized')
     // let status = {
@@ -21,13 +22,14 @@ router.get('/', (req, res, next) => {
     //     googlelink: "location.href='http://localhost:3000/auth/google';"
     // }
     // res.render('firstoauth', status
+
     getData(req.user.token).then(data => {
-        console.log("this is the users username" + req.user.username);
+        console.log("this is the users data" + data);
         let displayData = {
         title:'StepsSyncer',
-        username:  req.user.username, 
-        steps: req.user.data.lifetime.total.steps, 
-        mostperday: req.user.data.best.total.steps.value
+        username: req.user.username, 
+        distance: data.lifetime.total.distance, 
+        mostperday: data.best.total.distance.value
         };
        res.render('display', displayData);
         })
