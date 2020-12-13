@@ -24,7 +24,8 @@ router.get('/', (req, res, next) => {
     // res.render('firstoauth', status
 
     getData(req.user.token).then(data => {
-        console.log("this is the users data" + data);
+        //console.log("this is the users data" + data);
+        //console.log()
         let displayData = {
         title:'StepsSyncer',
         username: req.user.username, 
@@ -32,9 +33,11 @@ router.get('/', (req, res, next) => {
         mostperday: data.best.total.distance.value
         };
        res.render('display', displayData);
+       
         })
         
-    
+      
+            
 });
 
 
