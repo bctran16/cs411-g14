@@ -20,7 +20,7 @@ router.get('/', (req, res, next) => {
     //     googlelink: "location.href='http://localhost:3000/auth/google';"
     // }
     // res.render('firstoauth', status)
-    /*getData(req.params.save_this_shit).then(data => {
+   /* getData().then(data => {
         let displayData = {
         title:'bit2health',
         username:  req.user.username, 
@@ -29,8 +29,8 @@ router.get('/', (req, res, next) => {
         };
        res.render('display', displayData);
         })
-        
-    */
+        */
+    
 });
 
 

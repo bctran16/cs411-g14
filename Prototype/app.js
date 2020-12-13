@@ -77,20 +77,18 @@ passport.use(new FitbitStrategy({
       callbackURL: "http://localhost:3000/auth/fitbit/callback"
     },
     (accessToken, refreshToken, profile, done) => {
-      //save_this_shit = accessToken
+     accessSaved = accessToken
       User.findOne({fitbitid: profile.id}).then((currentUser) => {
         if (currentUser) {
           // user exist
-          currentUser.update({token: accessToken})
-          console.log("where the fuck did you go" + currentUser.token)
-          done(null,currentUser)
+          currentUser.update({token: accessSaved})
           console.log("User already existed" + currentUser)
         } else {
           // create new user
           new User({
             username: profile.displayName,
             fitbitid: profile.id,
-            token: accessToken
+            token: accessSaved
           }).save().then((newUser) => {
             console.log("User data stored in db")
             done(null, newUser)
