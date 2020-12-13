@@ -22,12 +22,12 @@ router.get('/', (req, res, next) => {
     // }
     // res.render('firstoauth', status
     getData(req.user.token).then(data => {
+        console.log("this is the users username" + req.user.username);
         let displayData = {
         title:'StepsSyncer',
         username:  req.user.username, 
-        steps: data.lifetime.total.steps, 
-        distance: data.lifetime.total.distance,
-        mostperday: data.best.total.steps.value
+        steps: req.user.data.lifetime.total.steps, 
+        mostperday: req.user.data.best.total.steps.value
         };
        res.render('display', displayData);
         })
