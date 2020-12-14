@@ -1,0 +1,14 @@
+extends layout
+
+block content
+
+body
+  form(action='/add_movie', method='POST')
+    p
+      | title: 
+      input(type='text', name='title', value='')
+      |          year: 
+      input(type='text', name='year', value='')
+      |          imdb: 
+      input(type='text', name='imdb', value='')
+    input(type='submit', value='Submit')
