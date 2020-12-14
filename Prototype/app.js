@@ -26,6 +26,7 @@ const fitbitauthsuccRouter = require('./routes/fitbitauth/fitbitauthsuccess')
 const fitbitauthfailRouter = require('./routes/fitbitauth/fitbitauthfail')
 const googlefitauthsuccRouter = require('./routes/googlefitauth/googlefitsuccess')
 const googlefirauthfailRouter = require('./routes/googlefitauth/googlefitfail')
+const fitbitaddRouter = require('./routes/fitbitauth/fitbitaddsteps')
 
 const app = express();
 
@@ -52,10 +53,12 @@ app.use(passport.session());
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/auth/fitbit/success', fitbitauthsuccRouter)
+app.use('/auth/fitbit/addsteps', fitbitaddRouter)
 app.use('/auth/fitbit/failure', fitbitauthfailRouter)
 app.use('/auth/google/success', googlefitauthsuccRouter)
 app.use('/auth/google/failure', googlefirauthfailRouter)
 app.use('/authorized',authrizedRoute)
+
 
 // initialize passport
 
