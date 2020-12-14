@@ -1,8 +1,10 @@
 extends layout
 
 block content
-  h1 Welcome to StepSyncer
-  p1 Please Log Into Your Fitbit
-  <input type="button" onclick="location.href='http://localhost:3000/auth/fitbit';" value="Log in" />
-  //- <input type="button" onclick="location.href='http://localhost:3000/auth/google';" value="Log in to Google" />
+  div(class="bgimage")
+    div(class="card text-center cd")
+      h1(class="card-title") Welcome to StepSyncer!
+      h3(class="card-text") Please log Into Your Fitbit
+      button(type="button" onclick="location.href='http://localhost:3000/auth/fitbit'" class="btn btn-primary") Log in
+
 
