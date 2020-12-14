@@ -27,10 +27,10 @@ router.get('/', (req, res, next) => {
         //console.log("this is the users data" + data);
         //console.log()
         let displayData = {
-        title:'StepsSyncer',
         username: req.user.username, 
         distance: data.lifetime.total.distance, 
-        mostperday: data.best.total.distance.value
+        mostperday: data.best.total.distance.value, 
+        steps: data.lifetime.total.steps
         };
        res.render('display', displayData);
        
