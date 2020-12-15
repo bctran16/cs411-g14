@@ -84,7 +84,7 @@ passport.use(new FitbitStrategy({
         if (currentUser) {
           // user exist
           currentUser.update({token: accessToken}).then(() => {
-            console.log("User already existed" + currentUser)
+            console.log("User already existed" + currentUser.username) 
             done(null,currentUser)
           })
           
