@@ -19,11 +19,7 @@ const addData = async (token, body) => {
     let newData = await fetch('https://api.fitbit.com/1/user/-/activities.json', {
         method: "POST",
         headers: {"Authorization": "Bearer " + token },
-<<<<<<< HEAD
-        body: {activityLog: body}
-=======
         body: formdata
->>>>>>> 771a0124d307802d32882dc6f345675efe373220
     })
     let cleanData = await newData
     console.log("these are the fruits of my labor" + JSON.stringify(cleanData))
