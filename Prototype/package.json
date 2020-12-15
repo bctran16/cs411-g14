@@ -12,6 +12,8 @@
     "cookie-session": "^1.4.0",
     "debug": "~2.6.9",
     "express": "~4.16.1",
+    "form-data": "^3.0.0",
+    "formdata": "^0.10.4",
     "hapi": "^11.0.0",
     "http-errors": "~1.6.3",
     "jwt-simple": "^0.3.1",
