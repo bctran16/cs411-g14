@@ -27,7 +27,7 @@ const addData = async (token, body) => {
 }
 
 router.get('/', (req, res, next) => {
-    res.render('why')
+    res.render('data')
     /*addData(req.user.token).then(data => {
     //console.log("this is the users data" + data);
     //console.log()
@@ -45,7 +45,7 @@ router.post('/', (req,res, next) =>{
     // console.log("here you go tim" + JSON.stringify(req.body))
     addData(req.user.token, req.body).then(() => 
     {
-        res.render('sick')
+        res.render('SAS') //short for "Successfully Added Steps"
     })
     
 })
