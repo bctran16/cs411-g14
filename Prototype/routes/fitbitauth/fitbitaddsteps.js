@@ -8,9 +8,9 @@ const addData = async (token, body) => {
     let newData = await fetch('https://api.fitbit.com/1/user/-/activities.json', {
         method: "POST",
         headers: {"Authorization": "Bearer " + token },
-        body: JSON.stringify(body)
+        body: {activityLog: body}
     })
-    let cleanData = await newData.json()
+    let cleanData = await newData
     console.log("these are the fruits of my labor" + JSON.stringify(cleanData))
     return cleanData
 }
