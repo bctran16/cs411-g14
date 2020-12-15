@@ -9,8 +9,10 @@ const addData = async (token, body) => {
     console.log(body)
     let formdata = new FormData();
     formdata.append("activityId",body.activityId);
+    var startTimeinMin = parseInt(body.durationMillis);
+    startTimeinMin = (startTimeinMin * 60000).toString();
     formdata.append("startTime", body.startTime);
-    formdata.append("durationMillis", body.durationMillis);
+    formdata.append("durationMillis", startTimeinMin);
     formdata.append("distance", body.distance);
     formdata.append("date", body.dateymd);
     // for (var value of formdata.values()) {
