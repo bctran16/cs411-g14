@@ -1,18 +1,32 @@
 extends layout
 
 block content
-    h1 = title
-    form(action='/auth/fitbit/addsteps', method='POST')
-      p
-        | Activity: 
-        input(name='activityName', value='', type='text')
-        |          Start Time: 
-        input(name='StartTime', value='', type='text')
-        |          duration: 
-        input(name='durationMillis', value='', type='text')
-        |          date:
-        input(name='date', value='', type='text')
-        |          distance:
-        input(name = 'distance', value='', type='text')
-        |
-        input(value='Submit', type='submit')
+    form(action='/auth/fitbit/addsteps', method = 'POST')
+      label(for='activityName') Activity Done:
+      br
+      input#activityId(type='number' name= 'activityId' value='')
+      br
+      br
+      label(for = 'startTime') Start Time:
+      br
+      input#startTime(type='time' name= `startTime` value = '')
+      br
+      br
+      label(for = 'durationMillis') Duration of Workout:
+      br
+      input#durationMillis(type='number' name = "durationMillis" value='')
+      br
+      br
+      label(for = 'date') date:
+      br
+      input#date(type = 'date' name: 'date' value='')
+      br
+      br
+      label(for='distance') Distance in miles :
+      br
+      input#distance(type='number' name='distance' value='')
+      br
+      br
+      input(type='submit' value='Submit')
+
+        

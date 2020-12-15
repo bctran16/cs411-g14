@@ -4,12 +4,14 @@ const fetch = require('node-fetch')
 const router = express.Router();
 
 // var params = ['activityName', 'startTime', 'durationMillis', 'date' , 'distance']
-
-const addData = async (token) => {
+const addData = async (token, body) => {
     let newData = await fetch('https://api.fitbit.com/1/user/-/activities.json', {
         method: "POST",
-        headers: {"Authorization": "Bearer " + token }})
+        headers: {"Authorization": "Bearer " + token },
+        body: JSON.stringify(body)
+    })
     let cleanData = await newData.json()
+    console.log("these are the fruits of my labor" + JSON.stringify(cleanData))
     return cleanData
 }
 
@@ -29,7 +31,11 @@ router.get('/', (req, res, next) => {
     });
 
 router.post('/', (req,res, next) =>{
-    console.log("please info" + req.body.)
+    // console.log("please info " + req.body.activityName)
+    // console.log("token please : " + req.user.token)
+    console.log("here you go tim" + JSON.stringify(req.body))
+    addData(req.user.token, req.body)
+    res.render('sick')
 })
 
     module.exports = router;
