@@ -2,13 +2,24 @@ const { query } = require('express');
 const express = require('express');
 const fetch = require('node-fetch')
 const router = express.Router();
+var FormData = require('form-data');
 
 // var params = ['activityName', 'startTime', 'durationMillis', 'date' , 'distance']
 const addData = async (token, body) => {
+    console.log(body)
+    let formdata = new FormData();
+    formdata.append("activityId",body.activityId);
+    formdata.append("startTime", body.startTime);
+    formdata.append("durationMillis", body.durationMillis);
+    formdata.append("distance", body.distance);
+    formdata.append("date", body.dateymd);
+    // for (var value of formdata.values()) {
+    //     console.log(value);
+    // }
     let newData = await fetch('https://api.fitbit.com/1/user/-/activities.json', {
         method: "POST",
         headers: {"Authorization": "Bearer " + token },
-        body: JSON.stringify(body)
+        body: formdata
     })
     let cleanData = await newData.json()
     console.log("these are the fruits of my labor" + JSON.stringify(cleanData))
@@ -31,12 +42,12 @@ router.get('/', (req, res, next) => {
     });
 
 router.post('/', (req,res, next) =>{
-    // console.log("please info " + req.body.activityName)
-    // console.log("token please : " + req.user.token)
-    console.log("here you go tim" + JSON.stringify(req.body))
-    addData(req.user.token, req.body)
-    res.render('sick')
+    // console.log("here you go tim" + JSON.stringify(req.body))
+    addData(req.user.token, req.body).then(() => 
+    {
+        res.render('sick')
+    })
+    
 })
 
     module.exports = router;
-
