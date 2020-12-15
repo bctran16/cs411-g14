@@ -6,14 +6,14 @@ const router = express.Router();
 // var params = ['activityName', 'startTime', 'durationMillis', 'date' , 'distance']
 
 const addData = async (token) => {
-    let rawData = await fetch('https://api.fitbit.com/1/user/-/activities.json', {
+    let newData = await fetch('https://api.fitbit.com/1/user/-/activities.json', {
         method: "POST",
         headers: {"Authorization": "Bearer " + token }})
-    let cleanData = await NewData.json()
+    let cleanData = await newData.json()
     return cleanData
 }
 
-router.post('/', (req, res, next) => {
+router.get('/', (req, res, next) => {
     res.render('why')
     /*addData(req.user.token).then(data => {
     //console.log("this is the users data" + data);
@@ -26,6 +26,11 @@ router.post('/', (req, res, next) => {
     };
    res.render('display', displayData);
    */
-   
     });
+
+router.post('/', (req,res, next) =>{
+    console.log("please info" + req.body.)
+})
+
     module.exports = router;
+
