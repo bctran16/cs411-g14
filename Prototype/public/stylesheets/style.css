@@ -1,15 +1,16 @@
-body, html {
+body,
+html {
   height: 100%;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
-  color: #00B7FF;
+  color: #00b7ff;
 }
 
 .bgimage {
   height: 100%;
-  background: url(https://wallpaperset.com/w/full/7/1/b/197712.jpg) ;
+  background: url(https://wallpaperset.com/w/full/7/1/b/197712.jpg);
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -17,5 +18,5 @@ a {
 }
 
 .cd {
-  padding: 20px
+  padding: 20px;
 }
